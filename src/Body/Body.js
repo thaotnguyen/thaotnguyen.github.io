@@ -4,6 +4,9 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Homepage from "../Homepage";
 import Recall from "../Recall";
+import DSA from "../DSA";
+import LES from "../LES";
+import Illustrations from "../Illustrations";
 
 import "./Body.scss";
 
@@ -19,6 +22,9 @@ const Container = ({ location }) => {
           <Switch location={location}>
             <Route exact path="/" component={Homepage} />
             <Route exact path="/recall" component={Recall} />
+            <Route exact path="/dsa" component={DSA} />
+            <Route exact path="/les" component={LES} />
+            <Route exact path="/illustrations" component={Illustrations} />
           </Switch>
         </section>
       </CSSTransition>

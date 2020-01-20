@@ -1,4 +1,130 @@
 .container {
   max-width: 800px;
-  margin: 32px auto;
+  margin: 72px auto;
+  padding: 0 96px;
+
+  @media screen and (max-width: 600px) {
+    &.container {
+      margin: -16px auto 0 auto;
+      padding: 0 32px;
+    }
+  }
+
+  .intro {
+    min-height: 6em;
+  }
+
+  p {
+    @media screen and (max-width: 600px) {
+      font-size: 18px;
+    }
+
+    span {
+      display: inline-block;
+      position: relative;
+      font-weight: 600;
+    }
+  }
+
+  .project-image {
+    box-sizing: border-box;
+    width: 50%;
+    padding-bottom: calc(50% - 16px);
+    height: 0;
+    background: lighten(#ec1f27, 45);
+    position: relative;
+    transition: box-shadow 0.3s;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% - 128px);
+      height: auto;
+      border-radius: 8px;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+      padding-bottom: 100%;
+
+      img {
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .project {
+    display: flex;
+    margin: 32px 0;
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      .project-image {
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+
+    &:first-of-type {
+      .project-image {
+        background: lighten(#a0f, 45);
+      }
+    }
+
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
+      .project-image {
+        img {
+          width: 100%;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  .project-desc {
+    padding-left: 32px;
+    width: 50%;
+    text-align: left;
+
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 1.2em;
+      font-weight: 600;
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    h2 {
+      font-size: 0.5em;
+      margin: 0 0 auto 0;
+      text-align: left;
+    }
+
+    p {
+      font-size: 0.75em;
+    }
+
+    @media screen and (max-width: 600px) {
+      padding-left: 0;
+      width: 100%;
+      text-align: center;
+
+      h1 {
+        text-align: center;
+      }
+
+      h2 {
+        text-align: center;
+      }
+    }
+  }
 }
