@@ -15,7 +15,7 @@ const Container = ({ location }) => {
     <TransitionGroup className="transition-group" p>
       <CSSTransition
         key={location.key}
-        timeout={{ enter: 400, exit: 400 }}
+        timeout={{ enter: 400, exit: 0 }}
         classNames={"fade"}
       >
         <section className="route-section">

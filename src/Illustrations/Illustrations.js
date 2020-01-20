@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./Illustrations.scss";
 
 const Illustrations = () => {
+  useEffect(() => {
+    //window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="container">
       <h1>Illustrations</h1>
