@@ -19,7 +19,6 @@ const DSA = () => {
       <img src="/dsa-event.png" alt="NYC DSA hero" />
       <img src="/dsa-calendar.png" alt="NYC DSA hero" />
       <img src="/dsa-volunteer.png" alt="NYC DSA hero" />
-      <img src="/dsa-volunteer-hero.png" alt="NYC DSA hero" />
       <img src="/dsa-donate.png" alt="NYC DSA hero" />
     </div>
   );
