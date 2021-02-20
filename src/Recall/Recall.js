@@ -1,75 +1,72 @@
-import React from "react";
+import React from 'react';
+import { motion } from 'framer-motion';
 
-import "./Recall.scss";
+import './Recall.scss';
 
-const Recall = () => {
+export const Recall = () => {
   return (
-    <div className="container">
-      <h1>Recall</h1>
-      <h2>
-        A video platform that enables researchers to record, upload, analyze,
-        and share videos of their user studies.
-      </h2>
-      <img src="/recall.png" alt="Recall home page" />
-      <h2>
-        Recall was originally designed from a mostly engineering lens without
-        much UX or visual design, so the goal of this project was to completely
-        revamp the design of the entire product.
-      </h2>
-      <h2>
-        I interviewed several UXRs and found that users felt that the UI was
-        very confusing and cumbersome to use, and many key features were not
-        discoverable. In addition, analytics showed that many Recall users were
-        actually not UXRs and were engineers, revealing an additional use case
-        where engineers used Recall to upload videos of bugs.
-      </h2>
-      <img src="/recall-old-home.png" alt="Recall old home page" />
-      <h2>
-        The home page of the original Recall. Images are broken due to this
-        being an old version that does not work with GCP anymore.
-      </h2>
-      <h2>
-        Users felt that it was odd that all projects are shown on this page
-        because they had no use for them, and it was also difficult to discover
-        how to create a new project or what actions users should take upon first
-        visiting Recall.
-      </h2>
-      <img src="/recall-old.png" alt="Recall old session page" />
-      <h2>Individual projects in the original Recall.</h2>
-      <img src="/recall.png" alt="Recall home page" />
-      <h2>
-        The brand new Recall, after many iterations of designing and usability
-        testing. The new cards were able to display metadata much more clearly
-        and concisely, and the new sidebar streamlined navigation and made many
-        critical user journeys much more discoverable.
-      </h2>
-      <img src="/recall-tutorial.png" alt="Recall marketing" />
-      <h2>
-        The new marketing material for the revamped Recall. I made these
-        illustrations in Sketch and worked with a UX writer for the copy.
-      </h2>
-      <img src="/recall-project.png" alt="Recall marketing" />
-      <h2>
-        The new project page, making it easier for users to manage their project
-        by making uploading more discoverable, as well as surfacing thumbnail
-        images.
-      </h2>
-      <h2>
-        This page was also designed to be future-proof, including lots of design
-        space for additional metadata such as a description, and a lot of page
-        space for project-level metrics which are slated to come in the future.
-      </h2>
-      <img src="/recall-session.png" alt="Recall marketing" />
-      <h2>
-        The new design for the individual video page. The layout was changed to
-        optimize space for a horizontal video, because analytics showed that
-        almost all videos uploaded by UXRs are landscape orientation.
-      </h2>
-      <h2>
-        In addition, thumbnail images and additional session metadata are
-        surfaced for ease of use.
-      </h2>
-    </div>
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <div className="project-page">
+        <img src="/recall.png" />
+        <h1>Recall</h1>
+        <p>
+          <span>
+            My main UX project at Google is Recall, an internal video platform
+            for UX researchers to upload footage of interviews for automatic
+            analysis like transcription. When Recall was first developed, it was
+            developed entirely by engineers without designers so the product
+            basically looked like just the functionality plopped on the page. My
+            job was to give the app a real UX foundation with research and
+            design.
+          </span>
+        </p>
+        <img src="/recall1.png" />
+        <p>Starting UX research by looking at quantitative data.</p>
+        <img src="/recall2.png" />
+        <p>
+          2 main user groups discovered through analytics and qualitative user
+          interviews.
+        </p>
+        <img src="/recall3.png" />
+        <p>
+          Initial sketches for a new workflow that can satisfy our intended
+          users while still addressing the need of our other users.
+        </p>
+        <img src="/recall4.png" />
+        <p>
+          Research showed that many new users had trouble getting started and
+          didn't know what the purpose of most components on the page were, so a
+          new design had to include various empty states and prompts to guide
+          users.
+        </p>
+        <img src="/recall5.png" />
+        <p>
+          The design also needed to surface the most salient information to
+          users, based on what they found important in usability tests.
+        </p>
+        <img src="/recall6.png" />
+        <p>
+          I also created illustrations to not only ease users into the product,
+          but also to add polish and refinement to increase trust.
+        </p>
+        <img src="/recall7.png" />
+        <p>Additional illustrations to ease users into the product.</p>
+        <img
+          src="/recall8.png"
+          style={{ padding: 0, border: '1px solid #e0e0e0' }}
+        />
+        <p>
+          The finished product. Metrics showed that the project was an overall
+          success. We had a 64% increase in MAU a week after the launch, and
+          drop off rate on the homepage also reduced significantly.
+        </p>
+        <img src="/recall10.png" />
+      </div>
+    </motion.div>
   );
 };
 

@@ -1,18 +1,12 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import Body from "../Body";
-import Header from "../Header";
-
-import "./App.scss";
+import Body from '../Body';
 
 function App() {
   return (
     <BrowserRouter>
-      <>
-        <Header />
-        <Body />
-      </>
+      <Body />
     </BrowserRouter>
   );
 }

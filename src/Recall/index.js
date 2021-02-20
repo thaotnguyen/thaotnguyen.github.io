@@ -1,2 +1,2 @@
-import Recall from "./Recall";
+import Recall from './Recall';
 export default Recall;

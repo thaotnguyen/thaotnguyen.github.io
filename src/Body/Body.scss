@@ -1,36 +1,19 @@
-.fade-enter {
-  opacity: 0.01;
-  pointer-events: none;
-  transform: translateY(30px);
-}
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
 
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-  transition: all 400ms;
-}
-
-.fade-exit {
-  opacity: 0;
-  position: fixed;
-  pointer-events: auto;
-}
-
-.fade-exit.fade-exit-active {
-  opacity: 0.01;
-  pointer-events: none;
-  position: fixed;
-  transition: opacity 400ms;
-}
-
-div.transition-group {
-  position: relative;
-}
-
-section.route-section {
-  position: absolute;
+html {
   width: 100%;
-  top: 0;
-  left: 0;
+  height: 100%;
+  background: #191819;
+}
+
+body {
+  font-family: 'DM Sans', Helvetica, Arial, sans-serif;
+}
+
+.main {
+  line-height: 1.5;
+  font-size: 24px;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease-in;
 }

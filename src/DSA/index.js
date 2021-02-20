@@ -1,2 +1,2 @@
-import DSA from "./DSA";
+import DSA from './DSA';
 export default DSA;

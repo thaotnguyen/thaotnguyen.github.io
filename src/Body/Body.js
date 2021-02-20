@@ -1,35 +1,29 @@
-import React from "react";
-import { Route, Switch, withRouter } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import React from 'react';
+import { Switch, useLocation, Route } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
-import Homepage from "../Homepage";
-import Recall from "../Recall";
-import DSA from "../DSA";
-import LES from "../LES";
-import Illustrations from "../Illustrations";
+import Homepage from '../Homepage';
+import Recall from '../Recall';
+import Fabric from '../Fabric';
+import Product from '../Product';
+import DSA from '../DSA';
 
-import "./Body.scss";
+import './Body.scss';
 
-const Container = ({ location }) => {
+function Body() {
+  const location = useLocation();
+
   return (
-    <TransitionGroup className="transition-group" p>
-      <CSSTransition
-        key={location.key}
-        timeout={{ enter: 400, exit: 0 }}
-        classNames={"fade"}
-      >
-        <section className="route-section">
-          <Switch location={location}>
-            <Route exact path="/" component={Homepage} />
-            <Route exact path="/recall" component={Recall} />
-            <Route exact path="/dsa" component={DSA} />
-            <Route exact path="/les" component={LES} />
-            <Route exact path="/illustrations" component={Illustrations} />
-          </Switch>
-        </section>
-      </CSSTransition>
-    </TransitionGroup>
+    <AnimatePresence exitBeforeEnter>
+      <Switch location={location} key={location.pathname}>
+        <Route path="/" component={Homepage} exact />
+        <Route path="/recall" component={Recall} />
+        <Route path="/fabric" component={Fabric} />
+        <Route path="/product" component={Product} />
+        <Route path="/dsa" component={DSA} />
+      </Switch>
+    </AnimatePresence>
   );
-};
+}
 
-export default withRouter(Container);
+export default Body;
