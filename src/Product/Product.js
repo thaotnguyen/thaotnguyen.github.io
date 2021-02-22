@@ -285,6 +285,7 @@ export const Product = () => {
           wanted to convey a sense of fun in the illustration, going with bright
           colors based on the app's main accent color which was orange.
         </p>
+        <img src="/illustration10.png" />
       </div>
     </motion.div>
   );
