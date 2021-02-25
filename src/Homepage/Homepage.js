@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classnames from 'classnames/bind';
 import { withRouter, useHistory } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useViewportScroll } from 'framer-motion';
 
 import './Homepage.scss';
 
@@ -10,6 +10,7 @@ const Container = ({ location }) => {
   const [loaded, setLoaded] = useState(false);
   const [fadeArrow, setFadeArrow] = useState(true);
   const history = useHistory();
+  const { scrollYProgress } = useViewportScroll();
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -21,6 +22,7 @@ const Container = ({ location }) => {
     setLoaded(true);
     setScroll(window.scrollY);
     window.addEventListener('scroll', handleScroll, true);
+    return () => {};
   }, []);
 
   const windowHeight = 2 * window.innerHeight;
@@ -33,7 +35,6 @@ const Container = ({ location }) => {
     '#e1bee7',
     '#fcf3d1',
     '#e5e5e5',
-    '#ffcdd2',
     '#191819',
   ];
 
@@ -144,22 +145,6 @@ const Container = ({ location }) => {
             </h4>
           </div>
           <img src="/product.png" alt="Product illustrations" />
-        </div>
-        <div className="project">
-          <div className="project-content">
-            <h1>NYC DSA</h1>
-            <h6>UX design</h6>
-            <h4>
-              Marketing website for the NYC Democratic Socialists of America.
-            </h4>
-          </div>
-          <img
-            src="/dsa-tall.png"
-            alt="DSA"
-            style={{
-              filter: 'drop-shadow(5px 5px 5px rgba(100, 100, 100, 50))',
-            }}
-          />
         </div>
         <div className="blurb">
           <p>Get in touch.</p>

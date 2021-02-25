@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Switch, useLocation, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -10,8 +10,56 @@ import DSA from '../DSA';
 
 import './Body.scss';
 
+export const container = {
+  hidden: { opacity: 0, position: 'relative' },
+  show: {
+    opacity: 1,
+    position: 'relative',
+    top: 0,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+export const item = {
+  hidden: { opacity: 0, position: 'relative', top: 40 },
+  show: {
+    opacity: 1,
+    position: 'relative',
+    transition: {
+      duration: 0.6,
+      ease: 'easeInOut',
+    },
+    top: 0,
+  },
+};
+
 function Body() {
   const location = useLocation();
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  async function loadImage(url, elem) {
+    return new Promise((resolve, reject) => {
+      elem.onload = () => resolve(elem);
+      elem.onerror = reject;
+      elem.src = url;
+    });
+  }
+
+  useEffect(() => {
+    Promise.all(
+      ['/recall.png', '/fabric-hero.png', '/illustration.png'].map((image) => {
+        return loadImage(image, new Image());
+      })
+    ).then(() => {
+      setImagesLoaded(true);
+    });
+  }, []);
+
+  if (!imagesLoaded) {
+    return null;
+  }
 
   return (
     <AnimatePresence exitBeforeEnter>
